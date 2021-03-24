@@ -18,7 +18,6 @@ namespace StringReversal
                     word += ' '; //Add the previously ignored whitespace character to the word
                     continue; 
                 }
-
                 wordStack.Push(input[i]);
             }
             return word;
@@ -43,11 +42,11 @@ namespace StringReversal
 
             if (checkString(input) == false) //The user's input contains non-alphabetical characters
             {
-                Console.WriteLine("Please only use alphabetical characters."); 
+                Console.WriteLine("\nPlease only use alphabetical characters."); 
             }
             else //The user's input contains only alphabetical characters (a-z, A-Z)
             {
-                Console.WriteLine($"Your word/phrase reversed is: {reverse(input)}\n"); 
+                Console.WriteLine($"\nYour word/phrase reversed is: {reverse(input)}\n"); 
             }
        }
         
