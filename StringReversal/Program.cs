@@ -7,23 +7,19 @@ namespace StringReversal
     {
         public static string reverse(string input)
         {
-            int index = 0; //Current index
             string word = "";
             Stack<char> wordStack = new Stack<char>();
 
-            while (index < input.Length) //Tracking the current index as we iterate over the input 
+            for (int i = 0; i <= input.Length; i++) //Tracking the current index as we iterate over the input 
             {
-                for (int i = index; i < input.Length; i++)
+                if (i == input.Length || input[i] == ' ') //Empty the stack and ignore any whitespace characters
                 {
-                    if (input[i] == ' ') break; //Exit the 'for' loop if we encounter a whitespace character
-                    ++index; //Incrementing the current index 
-                    wordStack.Push(input[i]);
+                    while (wordStack.Count > 0) word += wordStack.Pop();
+                    word += ' '; //Add the previously ignored whitespace character to the word
+                    continue; 
                 }
-                
-                while (wordStack.Count > 0) word += wordStack.Pop(); //Add to the word by taking characters off the top of the stack
 
-                word += ' '; //Add the previously ignored whitespace character to the word
-                ++index; //Incrementing the index to ignore the whitespace character from the user's input
+                wordStack.Push(input[i]);
             }
             return word;
         }
