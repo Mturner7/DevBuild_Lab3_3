@@ -45,9 +45,15 @@ namespace StringReversal
             Console.Write("Enter a word or phrase to reverse: ");
             string input = Console.ReadLine();
 
-            if (checkString(input) == false) Console.WriteLine("Please only use alphabetical characters."); //The user's input contains non-alphabetical characters
-            
-            else Console.WriteLine($"Your word/phrase reversed is: {reverse(input)}\n"); //The user's input contains only alphabetical characters (a-z, A-Z)
-        }
+            if (checkString(input) == false) //The user's input contains non-alphabetical characters
+            {
+                Console.WriteLine("Please only use alphabetical characters."); 
+            }
+            else //The user's input contains only alphabetical characters (a-z, A-Z)
+            {
+                Console.WriteLine($"Your word/phrase reversed is: {reverse(input)}\n"); 
+            }
+       }
+        
     }
 }
